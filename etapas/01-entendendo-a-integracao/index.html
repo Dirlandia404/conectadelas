@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etapa 1 — ConectaDelas</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 48px 20px;
+        background: #fbf8fc;
+        color: #281f2e;
+        font:
+          16px/1.55 Arial,
+          sans-serif;
+      }
+      main {
+        width: min(980px, 100%);
+        margin: auto;
+      }
+      header {
+        max-width: 720px;
+        margin-bottom: 38px;
+      }
+      small {
+        color: #66308d;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 8px 0;
+        color: #251337;
+        font-size: clamp(2.2rem, 6vw, 4rem);
+      }
+      header p {
+        color: #6d6273;
+        font-size: 1.1rem;
+      }
+      .fluxo,
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .fluxo div,
+      article {
+        border: 1px solid #e8e0eb;
+        border-radius: 18px;
+        background: white;
+        padding: 20px;
+      }
+      .fluxo div {
+        position: relative;
+        color: #66308d;
+        font-weight: bold;
+        text-align: center;
+      }
+      .fluxo div:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        right: -14px;
+        z-index: 1;
+      }
+      h2 {
+        margin-top: 48px;
+        color: #251337;
+      }
+      article {
+        min-height: 185px;
+      }
+      article span {
+        display: inline-block;
+        border-radius: 999px;
+        background: #f3eafa;
+        color: #66308d;
+        padding: 4px 9px;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+      article h3 {
+        margin-bottom: 4px;
+      }
+      article p {
+        color: #6d6273;
+      }
+      @media (max-width: 700px) {
+        .fluxo,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .fluxo div::after {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <small>Etapa 1 · Dados estáticos</small>
+        <h1>ConectaDelas</h1>
+        <p>
+          Uma plataforma para encontrar oportunidades gratuitas de formação e
+          conexão para mulheres na tecnologia.
+        </p>
+      </header>
+
+      <section>
+        <h2>Como a aplicação funcionará</h2>
+        <div class="fluxo">
+          <div>Usuária</div>
+          <div>Front-end</div>
+          <div>Back-end</div>
+          <div>Banco de dados</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Oportunidades escritas diretamente no HTML</h2>
+        <div class="cards">
+          <article>
+            <span>Online</span>
+            <h3>Introdução ao Desenvolvimento Web codedelas</h3>
+            <p>PET-SI UFC</p>
+          </article>
+          <article>
+            <span>Presencial</span>
+            <h3>Oficina de Prototipação</h3>
+            <p>CodeDelas</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

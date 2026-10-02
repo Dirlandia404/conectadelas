@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oportunidades gratuitas para meninas e mulheres na tecnologia.">
+    <title>ConectaDelas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <a class="marca" href="#inicio" aria-label="Página inicial do ConectaDelas">
+        <span class="marca-simbolo" aria-hidden="true">C</span>
+        <span>ConectaDelas</span>
+      </a>
+      <a class="botao botao-secundario" href="#cadastrar">Cadastrar oportunidade</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-conteudo">
+          <span class="etiqueta">Tecnologia também é lugar de mulher</span>
+          <h1>O próximo passo da sua jornada pode começar aqui.</h1>
+          <p>
+            Encontre cursos, eventos e experiências gratuitas para aprender,
+            criar conexões e crescer na tecnologia.
+          </p>
+          <a class="botao botao-primario" href="#oportunidades">Explorar oportunidades</a>
+        </div>
+        <div class="hero-ilustracao" aria-hidden="true">
+          <span class="orbita orbita-um"></span>
+          <span class="orbita orbita-dois"></span>
+          <div class="cartao-destaque">
+            <span>Novas possibilidades</span>
+            <strong>começam com uma oportunidade.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao" id="oportunidades" aria-labelledby="titulo-oportunidades">
+        <div class="secao-cabecalho">
+          <div>
+            <span class="sobretitulo">Descubra</span>
+            <h2 id="titulo-oportunidades">Oportunidades disponíveis</h2>
+          </div>
+          <label class="filtro">
+            <span>Modalidade</span>
+            <select id="filtro-modalidade">
+              <option value="">Todas</option>
+              <option value="Online">Online</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Híbrida">Híbrida</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="estado-lista" class="estado" role="status">Carregando oportunidades...</p>
+        <div id="lista-oportunidades" class="grade" aria-live="polite"></div>
+      </section>
+
+      <section class="secao secao-formulario" id="cadastrar" aria-labelledby="titulo-cadastro">
+        <div class="texto-formulario">
+          <span class="sobretitulo">Compartilhe</span>
+          <h2 id="titulo-cadastro">Conhece uma oportunidade?</h2>
+          <p>
+            Cadastre uma iniciativa que possa aproximar mais meninas e mulheres
+            do universo da tecnologia.
+          </p>
+          <div class="dica">
+            <strong>Antes de cadastrar</strong>
+            <span>Confira se a oportunidade é gratuita e se o link está funcionando.</span>
+          </div>
+        </div>
+
+        <form id="form-oportunidade" class="formulario">
+          <div class="campo campo-completo">
+            <label for="titulo">Título da oportunidade</label>
+            <input id="titulo" name="titulo" minlength="4" required placeholder="Ex.: Oficina de programação">
+            <small class="erro-campo" data-erro="titulo"></small>
+          </div>
+
+          <div class="campo">
+            <label for="instituicao">Instituição</label>
+            <input id="instituicao" name="instituicao" required placeholder="Quem está oferecendo?">
+            <small class="erro-campo" data-erro="instituicao"></small>
+          </div>
+
+          <div class="campo">
+            <label for="modalidade">Modalidade</label>
+            <select id="modalidade" name="modalidade" required>
+              <option value="">Selecione</option>
+              <option value="Online">Online</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Híbrida">Híbrida</option>
+            </select>
+            <small class="erro-campo" data-erro="modalidade"></small>
+          </div>
+
+          <div class="campo campo-completo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" minlength="10" required rows="4" placeholder="Conte brevemente o que será oferecido"></textarea>
+            <small class="erro-campo" data-erro="descricao"></small>
+          </div>
+
+          <div class="campo campo-completo">
+            <label for="link">Link para inscrição</label>
+            <input id="link" name="link" type="url" required placeholder="https://exemplo.com/inscricao">
+            <small class="erro-campo" data-erro="link"></small>
+          </div>
+
+          <button id="botao-enviar" class="botao botao-primario campo-completo" type="submit">
+            Cadastrar oportunidade
+          </button>
+          <p id="mensagem-formulario" class="mensagem campo-completo" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <strong>ConectaDelas</strong>
+      <span>Projeto didático desenvolvido para o CodeDelas.</span>
+    </footer>
+
+    <template id="modelo-oportunidade">
+      <article class="cartao-oportunidade">
+        <div class="cartao-topo">
+          <span class="modalidade"></span>
+          <span class="numero"></span>
+        </div>
+        <h3></h3>
+        <p class="instituicao"></p>
+        <p class="descricao"></p>
+        <a class="link-oportunidade" target="_blank" rel="noopener noreferrer">Ver oportunidade <span aria-hidden="true">↗</span></a>
+      </article>
+    </template>
+
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

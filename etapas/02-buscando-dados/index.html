@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 2 — ConectaDelas</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 48px 20px; background: #fbf8fc; color: #281f2e; font: 16px/1.55 Arial, sans-serif; }
+      main { width: min(980px, 100%); margin: auto; }
+      small { color: #66308d; font-weight: bold; text-transform: uppercase; }
+      h1 { margin: 8px 0; color: #251337; font-size: clamp(2.2rem, 6vw, 4rem); }
+      #estado { color: #6d6273; }
+      #lista { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+      article { min-height: 230px; display: flex; flex-direction: column; border: 1px solid #e8e0eb; border-radius: 18px; background: white; padding: 20px; }
+      article span { align-self: start; border-radius: 999px; background: #f3eafa; color: #66308d; padding: 4px 9px; font-size: .75rem; font-weight: bold; }
+      article h2 { margin-bottom: 2px; font-size: 1.2rem; }
+      article p { color: #6d6273; }
+      article a { margin-top: auto; color: #66308d; font-weight: bold; }
+      .erro { color: #a72c49 !important; }
+      @media (max-width: 700px) { #lista { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <small>Etapa 2 · Requisição GET</small>
+      <h1>Oportunidades disponíveis</h1>
+      <p id="estado" role="status">Carregando oportunidades...</p>
+      <div id="lista"></div>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

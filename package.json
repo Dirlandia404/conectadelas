@@ -1,0 +1,24 @@
+{
+  "name": "conectadelas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Projeto didático de integração e publicação para o CodeDelas",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "start": "node backend/server.js",
+    "frontend": "node scripts/serve-static.js frontend 5500",
+    "etapa:1": "node scripts/serve-static.js etapas/01-entendendo-a-integracao 5501",
+    "etapa:2": "node scripts/serve-static.js etapas/02-buscando-dados 5502",
+    "etapa:3": "node scripts/serve-static.js etapas/03-enviando-dados 5503",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
